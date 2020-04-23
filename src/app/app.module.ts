@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SynchronisationModule } from './synchronisation/synchronisation.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent

@@ -1,5 +1,5 @@
-import {Component, Injectable} from '@angular/core';
-import {SynchronisationService} from "../synchronisation.service";
+import { Component, Injectable } from '@angular/core';
+import { SynchronisationService } from "../synchronisation.service";
 
 @Component({
   selector: 'app-synchronise',

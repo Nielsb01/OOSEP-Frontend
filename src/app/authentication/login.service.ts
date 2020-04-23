@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
-import { SynchronisationData } from "./synchronisationData";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {SynchronisationData} from "../synchronisation/synchronisationData";
 
 @Injectable({
-  // TODO
-  // zou dit moeten zijn maar dan is eer circular dependency: providedIn: SynchronisationModule
   providedIn: 'root'
-
 })
-export class SynchronisationService {
+export class LoginService {
 
   // Moet globaal worden
   backendUrl = '000.000.000.000';
@@ -21,7 +18,7 @@ export class SynchronisationService {
 
   constructor(private http: HttpClient) { }
 
-  synchroniseWorkedTime(synchronisationData: SynchronisationData) {
+  handleLogin(synchronisationData: SynchronisationData) {
     this.http.post(this.backendUrl, synchronisationData, this.httpOptions);
   }
 }
