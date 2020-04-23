@@ -1,5 +1,5 @@
 import {Component, Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {SynchronisationService} from "../synchronisation.service";
 
 @Component({
   selector: 'app-synchronise',
@@ -8,18 +8,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class SynchroniseComponent {
 
-  // Gaat waarschijnlijk binnenkort een constante worden als meer components met backend moeten communiceren
-  backendUrl = '000.000.000.000';
-
-  httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-    })
+  tempData = {
+    'data': 'geen'
   };
 
-  constructor(private http: HttpClient) {  }
+  constructor(private synchronisationService: SynchronisationService) {  }
 
-  synchroniseWorkedTime() {
-    this.http.post(this.backendUrl, 'JSON van gegevens van de gebruiker', this.httpOptions);
+  synchroniseWorkedTime(): void {
+    this.synchronisationService.synchroniseWorkedTime(this.tempData);
   }
 }
