@@ -29,5 +29,7 @@ export class SynchroniseComponent {
 
   onSubmit(synchronisationData) {
     this.synchronisationService.handleSynchronisation(synchronisationData);
+
+    console.warn('Your order has been submitted', synchronisationData);
   }
 }

@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class SynchronisationService {
 
-  // Moet globaal worden
   backendUrl = '000.000.000.000';
 
   httpOptions = {
@@ -17,7 +16,7 @@ export class SynchronisationService {
 
   constructor(private http: HttpClient) { }
 
-  handleSynchronisation(synchronisationData: {username: string, password: string}) {
+  handleSynchronisation(synchronisationData: { username: string, password: string }) {
     this.http.post(this.backendUrl, synchronisationData, this.httpOptions);
   }
 }
