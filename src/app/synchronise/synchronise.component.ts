@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 
 import {SynchronisationService} from "../synchronisation.service";
 
@@ -30,6 +30,6 @@ export class SynchroniseComponent {
   onSubmit(synchronisationData) {
     this.synchronisationService.handleSynchronisation(synchronisationData);
 
-    console.warn('Your order has been submitted', synchronisationData);
+    console.warn('Synchronisation attempt made: ', synchronisationData);
   }
 }
