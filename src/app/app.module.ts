@@ -3,21 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SynchronisationModule } from './synchronisation/synchronisation.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SynchroniseComponent } from './synchronise/synchronise.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SynchroniseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SynchronisationModule,
     FormsModule,
     ReactiveFormsModule
   ],

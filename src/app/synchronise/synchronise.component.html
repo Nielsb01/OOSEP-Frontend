@@ -1,0 +1,31 @@
+<header class="container-fluid">
+  <h1 class="title">Druk op de onderstaande knop om je uren te synchroniseren!</h1>
+</header>
+
+<main>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <!-- Synchronisation Form -->
+      <form [formGroup]="synchronisationForm" (ngSubmit)="onSubmit(synchronisationForm.value)">
+
+        <div>
+          <!-- Sync from input fields -->
+          <div>
+            <input type="text" id="syncFromUrl" class="fadeIn second" name="login" placeholder="jira URL" formControlName="syncFromURL">
+            <input type="text" id="syncFromLogin" class="fadeIn third" name="login" placeholder="login" formControlName="syncFromUsername">
+            <input type="text" id="syncFromPassword" class="fadeIn fourth" name="login" placeholder="password" formControlName="syncFromPassword">
+          </div>
+          <!-- Sync to input fields -->
+          <div>
+            <input type="text" id="syncToUrl" class="fadeIn second" name="login" placeholder="jira URL" formControlName="syncToURL">
+            <input type="text" id="syncToLogin" class="fadeIn third" name="login" placeholder="login" formControlName="syncToUsername">
+            <input type="text" id="syncToPassword" class="fadeIn fourth" name="login" placeholder="password" formControlName="syncToPassword">
+          </div>
+        </div>
+        <button type="submit" class="fadeIn fourth">Synchroniseer</button>
+      </form>
+
+    </div>
+  </div>
+</main>

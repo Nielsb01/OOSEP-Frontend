@@ -64,6 +64,10 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
+form {
+
+}
+
 
 
 /* TABS */
@@ -248,8 +252,6 @@ input[type=text]:placeholder {
 .underlineHover:hover:after{
   width: 100%;
 }
-
-
 
 /* OTHERS */
 

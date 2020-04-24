@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { SynchronisationData } from "../synchronisation/synchronisationData";
-
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class SynchronisationService {
 
   // Moet globaal worden
   backendUrl = '000.000.000.000';
@@ -19,7 +17,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  handleLogin(synchronisationData: SynchronisationData) {
+  handleSynchronisation(synchronisationData: {username: string, password: string}) {
     this.http.post(this.backendUrl, synchronisationData, this.httpOptions);
   }
 }
