@@ -3,12 +3,12 @@
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div>
+<!--    <div class="fadeIn first">-->
+<!--      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />-->
+<!--    </div>-->
 
     <!-- Login Form -->
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <form formGroup="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="username">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
       <button type="submit" class="fadeIn fourth">Log In</button>

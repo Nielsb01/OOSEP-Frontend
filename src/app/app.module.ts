@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SynchronisationModule } from './synchronisation/synchronisation.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SynchronisationModule
+    SynchronisationModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

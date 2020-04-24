@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SynchronisationData} from "../synchronisation/synchronisationData";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+import { SynchronisationData } from "../synchronisation/synchronisationData";
 
 @Injectable({
   providedIn: 'root'

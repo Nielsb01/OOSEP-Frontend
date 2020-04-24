@@ -1,4 +1,5 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { SynchronisationService } from "../synchronisation.service";
 
 @Component({
