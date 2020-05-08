@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SynchroniseComponent} from './synchronisation/synchronise/synchronise.component';
-import {AppComponent} from './app.component';
+import { SynchroniseComponent} from "./synchronise/synchronise.component";
 
 
 const routes: Routes = [

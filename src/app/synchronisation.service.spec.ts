@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SynchronisationService } from './synchronisation.service';
 
-describe('SynchronisationService', () => {
+describe('SynchronisationServiceService', () => {
   let service: SynchronisationService;
 
   beforeEach(() => {
