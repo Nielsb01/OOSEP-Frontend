@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {SynchronisationService} from "../synchronisation.service";
 
@@ -10,21 +10,20 @@ import {SynchronisationService} from "../synchronisation.service";
 })
 export class SynchroniseComponent {
 
-  synchronisationForm;
+  public synchronisationForm: FormGroup;
 
   constructor(
     private synchronisationService: SynchronisationService,
     private formBuilder: FormBuilder,
   ) {
     this.synchronisationForm = this.formBuilder.group({
-      syncOriginURL: ['', [Validators.required, Validators.pattern('https?://.+')]],
-      syncDestinationURL: '',
+      syncOriginEmailAddress: ['', [Validators.required, Validators.email]],
+      syncDestinationEmailAddress: ['', [Validators.required, Validators.email]],
     });
   }
 
-  onSubmit(synchronisationData) {
+  public onSubmit(synchronisationData) {
     this.synchronisationService.handleSynchronisation(synchronisationData);
-
     console.warn('Synchronisation attempt made: ', synchronisationData);
   }
 }
