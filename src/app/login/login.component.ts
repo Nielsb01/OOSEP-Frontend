@@ -1,8 +1,9 @@
 
 
 import {Component} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {EnrollmentService} from '../enrollment.service';
+import {LoginDTO} from '../login.dto';
 
 @Component({
   selector: 'app-login',
@@ -11,23 +12,23 @@ import {EnrollmentService} from '../enrollment.service';
 })
 export class LoginComponent {
 
-  loginForm;
+  loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private enrollmentService: EnrollmentService,
+    public enrollmentService: EnrollmentService,
   ) {
     this.loginForm = this.formBuilder.group({
-      syncLoginUsername: '',
-      syncLoginPassword: ''
+      username: '',
+      password: ''
     });
   }
 
-  onSubmit(loginData) {
+  onSubmit(loginData: LoginDTO) {
     console.log('login attempt made: ', loginData);
     this.enrollmentService.enroll(loginData)
       .subscribe(
-        data => console.log('Success!', data),
+        data => console.log('Response', data),
         error => console.error('Error!', error)
       );
   }
