@@ -1,7 +1,7 @@
 
 
 import {Component} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,7 @@ export class LoginComponent {
   }
 
   onSubmit(loginData) {
-    console.warn('login attempt made: ', loginData);
+    console.log('login attempt made: ', loginData);
   }
 }
 
