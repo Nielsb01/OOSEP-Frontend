@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 
 import {SynchronisationService} from "../synchronisation.service";
 
@@ -17,13 +17,8 @@ export class SynchroniseComponent {
     private formBuilder: FormBuilder,
   ) {
     this.synchronisationForm = this.formBuilder.group({
-      syncFromURL: '',
-      syncFromUsername: '',
-      syncFromPassword: '',
-
-      syncToURL: '',
-      syncToUsername: '',
-      syncToPassword: ''
+      syncOriginURL: ['', [Validators.required, Validators.pattern('https?://.+')]],
+      syncDestinationURL: '',
     });
   }
 
