@@ -6,25 +6,22 @@
       <form [formGroup]="synchronisationForm" (ngSubmit)="onSubmit(synchronisationForm.value)">
 
         <div class="container">
-          <!-- 'Sync from' input fields -->
+          <!-- 'Sync origin' input fields -->
           <div>
             <h2 class="fadeIn second">Van</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="jira URL" formControlName="syncFromURL">
-            <input type="text" class="fadeIn third" name="login" placeholder="login" formControlName="syncFromUsername">
-            <input type="text" class="fadeIn fourth" name="login" placeholder="password" formControlName="syncFromPassword">
+            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncOriginEmailAddress">
           </div>
 
-          <!-- 'Sync to' input fields -->
+          <!-- 'Sync destination' input fields -->
           <div>
             <h2 class="fadeIn second">Naar</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="jira URL" formControlName="syncToURL">
-            <input type="text" class="fadeIn third" name="login" placeholder="login" formControlName="syncToUsername">
-            <input type="text" class="fadeIn fourth" name="login" placeholder="password" formControlName="syncToPassword">
+            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncDestinationEmailAddress">
           </div>
         </div>
-        <button type="submit" class="fadeIn fourth">Synchroniseer</button>
-      </form>
 
+        <button type="submit" [disabled]="synchronisationForm.invalid" class="fadeIn fourth">Synchroniseer nu</button>
+
+      </form>
     </div>
   </div>
 </main>
