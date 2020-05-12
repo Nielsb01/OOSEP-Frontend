@@ -1,9 +1,9 @@
 
 
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {EnrollmentService} from '../enrollment.service';
-import {LoginDTO} from '../login.dto';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EnrollmentService } from '../enrollment.service';
+import { LoginDTO } from '../login.dto';
 
 @Component({
   selector: 'app-login',
