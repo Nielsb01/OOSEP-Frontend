@@ -12,7 +12,7 @@ export class EnrollmentService {
       'Content-Type': 'application/json'
     })
   };
-  url = 'http://localhost:8080/login';
+  backendLoginEndpoint = 'http://localhost:8080/login';
   constructor(public httpClient: HttpClient) { }
 
   /**
@@ -21,6 +21,6 @@ export class EnrollmentService {
    * @param httpOptions is the header needed for a succsessfull post request.
    */
   public enroll(loginData: LoginDTO): Observable<any>{
-    return this.httpClient.post<any>(this.url, loginData, this.httpOptions);
+    return this.httpClient.post<any>(this.backendLoginEndpoint, loginData, this.httpOptions);
   }
 }
