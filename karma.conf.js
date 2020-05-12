@@ -38,6 +38,15 @@ module.exports = function (config) {
       }
     },
     browsers: ['ChromeHeadless'],
-    singleRun: true
+    singleRun: true,
+    junitReporter:{
+      outputDir:'test-reports',
+      outputFile:'junit-report.xml',
+      suite:'',
+      useBrowserName:false,
+      nameFormatter:undefined,
+      properties:{
+      }   // key value pair of properties to add to the section of the report
+    }
   });
 };
