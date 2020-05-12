@@ -5,7 +5,6 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginDTO} from '../login.dto';
-import {EnrollmentService} from '../enrollment.service';
 import {Observable} from 'rxjs';
 
 describe('LoginComponent', () => {
