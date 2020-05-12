@@ -24,6 +24,10 @@ export class LoginComponent {
     });
   }
 
+  /**
+   * Method will call the enroll method of the {@link EnrollmentService} whenever the frontend form does a submit.
+   * @param loginData is a {@link LoginDTO} consisting of a username and password.
+   */
   onSubmit(loginData: LoginDTO) {
     console.log('login attempt made: ', loginData);
     this.enrollmentService.enroll(loginData)

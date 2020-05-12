@@ -15,7 +15,12 @@ export class EnrollmentService {
   url = 'http://localhost:8080/login';
   constructor(public httpClient: HttpClient) { }
 
-  public enroll(logindata: LoginDTO): Observable<any>{
-    return this.httpClient.post<any>(this.url, logindata, this.httpOptions);
+  /**
+   * Method will call the post method of the {@link HttpClient}.
+   * @param loginData is a {@link LoginDTO} consisting of a username and password
+   * @param httpOptions is the header needed for a succsessfull post request.
+   */
+  public enroll(loginData: LoginDTO): Observable<any>{
+    return this.httpClient.post<any>(this.url, loginData, this.httpOptions);
   }
 }
