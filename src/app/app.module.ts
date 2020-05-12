@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SynchroniseComponent } from './synchronise/synchronise.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SynchroniseComponent
+    SynchroniseComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
