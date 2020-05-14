@@ -1,4 +1,4 @@
-import {FormControl} from "@angular/forms";
+import {FormControl, ValidationErrors} from "@angular/forms";
 import * as moment from 'moment'
 
 /**
@@ -7,12 +7,21 @@ import * as moment from 'moment'
  *
  * @param control the control which should contain a valid date
  */
-export function dateValidator(control: FormControl) {
-  const dateString = control.value.toString();
-  const dateFormat = 'DD-MM-YYYY HH:mm';
-  const date = moment(dateString, dateFormat, true);
+export function dateValidator(control: FormControl): ValidationErrors | null {
+  let givenDate = '';
 
-  return {
-    validDate: date.isValid()
-  };
+  if (control.value != null) {
+    givenDate = control.value.toString().trim();
+  }
+
+  const dateFormat = 'DD-MM-YYYY HH:mm';
+  const date = moment(givenDate, dateFormat, true);
+
+  if (!date.isValid()) {
+    return {
+      validDate: date.isValid()
+    };
+  }
+
+  return null;
 }

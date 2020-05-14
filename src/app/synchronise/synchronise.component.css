@@ -128,9 +128,8 @@ button, input[type=button]:active, input[type=submit]:active, input[type=reset]:
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], .input {
   background-color: #f6f6f6;
-  border: none;
   color: #0d0d0d;
   padding: 15px 32px;
   text-align: center;

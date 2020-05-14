@@ -9,19 +9,37 @@
           <!-- 'Sync origin' input fields -->
           <div>
             <h2 class="fadeIn second">Van</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncOriginEmailAddress">
+            <input type="text" class="fadeIn second" placeholder="E-mailadres" formControlName="originEmailAddress">
           </div>
 
           <!-- 'Sync destination' input fields -->
           <div>
             <h2 class="fadeIn second">Naar</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncDestinationEmailAddress">
+            <input type="text" class="fadeIn second" placeholder="E-mailadres" formControlName="destinationEmailAddress">
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Sync date from -->
+          <div>
+            <h2 class="fadeIn second">Begindatum</h2>
+            <input type="text" class="input" placeholder="dd-mm-jjjj uu:mm" formControlName="fromDate">
+          </div>
+
+          <!-- Sync date until -->
+          <div>
+            <h2 class="fadeIn second">Einddatum</h2>
+            <input type="text" class="input" placeholder="dd-mm-jjjj uu:mm" formControlName="untilDate">
           </div>
         </div>
 
         <button type="submit" [disabled]="synchronisationForm.invalid" class="fadeIn fourth">Synchroniseer nu</button>
 
       </form>
+
+      <div>
+        {{ synchronisationForm.errors }}
+      </div>
     </div>
   </div>
 </main>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {SynchroniseDTO} from "./synchronise.dto";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SynchronisationService {
 
   constructor(private http: HttpClient) { }
 
-  handleSynchronisation(synchronisationData: { username: string, password: string }) {
+  public handleSynchronisation(synchronisationData: SynchroniseDTO) {
     this.http.post(this.backendUrl, synchronisationData, this.httpOptions);
   }
 }
