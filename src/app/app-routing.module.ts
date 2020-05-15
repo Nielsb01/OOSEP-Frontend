@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SynchroniseComponent} from './synchronisation/synchronise/synchronise.component';
-import {AppComponent} from './app.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: 'synchronise', component: SynchroniseComponent },
-  { path: '', redirectTo: '/synchronise', pathMatch: 'full' },
-  { path: '**', redirectTo: '/synchronise', pathMatch: 'full' }
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' }
 
 ];
 

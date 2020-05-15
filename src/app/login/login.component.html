@@ -1,0 +1,22 @@
+<main>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h1 class="fadeIn second">Jira Synchroniseermachien</h1>
+      <!-- Synchronisation Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+
+        <div class="container">
+          <div>
+            <h2 class="fadeIn second">Login</h2>
+            <input type="text" class="fadeIn third" name="loginUsername" placeholder="Gebruikersnaam" formControlName="username">
+            <input type="password" class="fadeIn fourth" name="loginPassword" placeholder="Wachtwoord" formControlName="password">
+            <div class="loginButtonContainer">
+              <button type="submit" class="fadeIn fourth">Login</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</main>

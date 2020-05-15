@@ -25,8 +25,28 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--headless',
+          '--disable-gpu',
+          '--no-sandbox',
+          '--remote-debugging-port=9222',
+        ]
+      }
+    },
+    browsers: ['ChromeHeadless'],
+    singleRun: true,
+    junitReporter:{
+      outputDir:'test-reports',
+      outputFile:'junit-report.xml',
+      suite:'',
+      useBrowserName:false,
+      nameFormatter:undefined,
+      properties:{
+      }   // key value pair of properties to add to the section of the report
+    }
   });
 };
