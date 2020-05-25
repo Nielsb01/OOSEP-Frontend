@@ -9,6 +9,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SynchroniseComponent } from './synchronise/synchronise.component';
 import { LoginComponent } from './login/login.component';
 import { AutoSyncOptionComponent } from './autoSync-option/autoSync-option.component';
+import { JiraUsernamesComponent } from './jira-usernames/jira-usernames.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { AutoSyncOptionComponent } from './autoSync-option/autoSync-option.compo
     AppComponent,
     SynchroniseComponent,
     LoginComponent,
-    AutoSyncOptionComponent
+    AutoSyncOptionComponent,
+    JiraUsernamesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

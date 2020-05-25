@@ -5,7 +5,7 @@ import {PreferenceDTO} from '../dto/preference.dto';
 import {PreferencesService} from '../services/preferences.service';
 
 @Component({
-  selector: 'app-manual-sync',
+  selector: 'app-auto-sync',
   templateUrl: './autoSync-option.component.html',
   styleUrls: ['./autoSync-option.component.css']
 })

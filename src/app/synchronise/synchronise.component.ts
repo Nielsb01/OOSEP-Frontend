@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
+import {SynchroniseDTO} from "../synchronise.dto";
+import {dateValidator} from "../validator/date.validator";
 import {SynchronisationService} from "../services/synchronisation.service";
 
 @Component({
@@ -17,12 +19,12 @@ export class SynchroniseComponent {
     private formBuilder: FormBuilder,
   ) {
     this.synchronisationForm = this.formBuilder.group({
-      syncOriginEmailAddress: ['', [Validators.required, Validators.email]],
-      syncDestinationEmailAddress: ['', [Validators.required, Validators.email]],
+      fromDate: ['', [Validators.required, dateValidator]],
+      untilDate: ['', [Validators.required, dateValidator]]
     });
   }
 
-  public onSubmit(synchronisationData) {
+  public onSubmit(synchronisationData: SynchroniseDTO): void {
     this.synchronisationService.handleSynchronisation(synchronisationData);
     console.warn('Synchronisation attempt made: ', synchronisationData);
   }
