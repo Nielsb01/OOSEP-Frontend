@@ -19,8 +19,6 @@ export class SynchroniseComponent {
     private formBuilder: FormBuilder,
   ) {
     this.synchronisationForm = this.formBuilder.group({
-      originEmailAddress: ['', [Validators.required, Validators.email]],
-      destinationEmailAddress: ['', [Validators.required, Validators.email]],
       fromDate: ['', [Validators.required, dateValidator]],
       untilDate: ['', [Validators.required, dateValidator]]
     });

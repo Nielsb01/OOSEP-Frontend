@@ -1,7 +1,5 @@
 export interface SynchroniseDTO {
-  originEmailAddress: string;
-  destinationEmailAddress: string;
-
+  userId: number;
   fromDate: Date;
   utilDate: Date;
 }

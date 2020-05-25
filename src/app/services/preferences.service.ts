@@ -15,7 +15,6 @@ export class PreferencesService {
   };
 
   constructor(public httpClient: HttpClient) {}
-
   public enroll(preferanceDTO: PreferenceDTO): Observable<any>{
     return this.httpClient.post<any>(this.url, preferanceDTO, this.httpOptions);
   }
