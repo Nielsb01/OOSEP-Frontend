@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
-import {SynchronisationService} from "../synchronisation.service";
+import {SynchronisationService} from "../services/synchronisation.service";
 
 @Component({
   selector: 'app-synchronise',

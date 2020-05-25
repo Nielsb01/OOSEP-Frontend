@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SynchroniseComponent } from './synchronise/synchronise.component';
 import { LoginComponent } from './login/login.component';
+import { AutoSyncOptionComponent } from './autoSync-option/autoSync-option.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SynchroniseComponent,
-    LoginComponent
+    LoginComponent,
+    AutoSyncOptionComponent
   ],
   imports: [
     BrowserModule,

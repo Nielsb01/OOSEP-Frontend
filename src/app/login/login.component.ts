@@ -2,8 +2,8 @@
 
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EnrollmentService } from '../enrollment.service';
-import { LoginDTO } from '../login.dto';
+import { EnrollmentService } from '../services/enrollment.service';
+import { LoginDTO } from '../dto/login.dto';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    public enrollmentService: EnrollmentService,
+    private enrollmentService: EnrollmentService,
   ) {
     this.loginForm = this.formBuilder.group({
       username: '',

@@ -2,7 +2,7 @@ import {async, TestBed} from '@angular/core/testing';
 
 import { EnrollmentService } from './enrollment.service';
 import {HttpClientModule} from '@angular/common/http';
-import {LoginDTO} from './login.dto';
+import {LoginDTO} from '../dto/login.dto';
 import {Observable} from 'rxjs';
 
 
