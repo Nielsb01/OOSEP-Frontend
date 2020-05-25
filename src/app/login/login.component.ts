@@ -47,8 +47,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     let userId = this.storageService.getUserId();
 
-    if (userId >= 0) {
-      this.router.navigateByUrl('/sync');
+    if (userId > 0) {
+      this.router.navigateByUrl('/home');
     }
   }
 }

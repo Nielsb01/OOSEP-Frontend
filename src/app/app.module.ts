@@ -10,6 +10,7 @@ import { SynchroniseComponent } from './synchronise/synchronise.component';
 import { LoginComponent } from './login/login.component';
 import { AutoSyncOptionComponent } from './autoSync-option/autoSync-option.component';
 import { JiraUsernamesComponent } from './jira-usernames/jira-usernames.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { JiraUsernamesComponent } from './jira-usernames/jira-usernames.componen
     SynchroniseComponent,
     LoginComponent,
     AutoSyncOptionComponent,
-    JiraUsernamesComponent
+    JiraUsernamesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
