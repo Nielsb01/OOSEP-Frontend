@@ -1,9 +1,7 @@
-
-
 import {Component, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { EnrollmentService } from '../services/enrollment.service';
-import { LoginDTO } from '../dto/login.dto';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {EnrollmentService} from '../services/enrollment.service';
+import {LoginDTO} from '../dto/login.dto';
 import {StorageService} from "../services/storage.service";
 import {Router} from "@angular/router";
 
@@ -33,7 +31,6 @@ export class LoginComponent implements OnInit {
    * @param loginData is a {@link LoginDTO} consisting of a username and password.
    */
   onSubmit(loginData: LoginDTO) {
-    console.log('login attempt made: ', loginData);
     this.enrollmentService.enroll(loginData)
       .subscribe(
         data => {
