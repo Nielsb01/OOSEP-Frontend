@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { EnrollmentService } from '../services/enrollment.service';
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {PreferenceDTO} from '../dto/preference.dto';
 import {PreferencesService} from '../services/preferences.service';
 
