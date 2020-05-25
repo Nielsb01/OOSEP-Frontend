@@ -2,21 +2,26 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UsernamesDto} from "../dto/usernames.dto";
 import {Observable} from "rxjs";
+import {StorageService} from "./storage.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class JiraUsernamesService {
-  private readonly url = 'http://localhost:8080/???';
+  private readonly backendUrl = 'http://localhost:8080/jiraUserKey';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private storageService: StorageService
+  ) { }
 
   public getJiraUsernames(usernames: UsernamesDto): Observable<any> {
-    return this.httpClient.post<any>(this.url, usernames, this.httpOptions);
+    let url = `${this.backendUrl}/userId=${this.storageService.getUserId()}`;
+    return this.httpClient.post<any>(url, usernames, this.httpOptions);
   }
 }

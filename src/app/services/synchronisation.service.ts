@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {SynchroniseDTO} from "../synchronise.dto";
+import {StorageService} from "./storage.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,13 @@ export class SynchronisationService {
     })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private storageService: StorageService
+  ) { }
 
   public handleSynchronisation(synchronisationData: SynchroniseDTO) {
-    this.http.post(this.backendUrl, synchronisationData, this.httpOptions);
+    let url = `${this.backendUrl}/userId=${this.storageService.getUserId()}`;
+    this.http.post(url, synchronisationData, this.httpOptions);
   }
 }
