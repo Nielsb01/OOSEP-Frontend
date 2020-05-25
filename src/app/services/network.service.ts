@@ -39,10 +39,7 @@ export class NetworkService {
 
     return new Observable<any>((observer) => {
       this.configService.getConfiguration().subscribe((config) => {
-        console.log(config.backendUrl);
         let completeUrl = `${config.backendUrl}${url}/${userId}`;
-
-        console.log(completeUrl);
 
         callback(completeUrl, observer);
       });

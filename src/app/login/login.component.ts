@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
    * @param loginData is a {@link LoginDTO} consisting of a username and password.
    */
   onSubmit(loginData: LoginDTO) {
-    console.log('login attempt made: ', loginData);
     this.enrollmentService.enroll(loginData)
       .subscribe(
         data => {
