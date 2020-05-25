@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import {SynchroniseDTO} from "./synchronise.dto";
+import {SynchroniseDTO} from "../synchronise.dto";
 
 @Injectable({
   providedIn: 'root'

@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sync', component: SynchroniseComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' }
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
   { path: 'autoSync-option', component: AutoSyncOptionComponent },
   { path: '', redirectTo: '/autoSync-option', pathMatch: 'full' },
   { path: '**', redirectTo: '/autoSync-option', pathMatch: 'full' }
