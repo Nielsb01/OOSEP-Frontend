@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {StorageService} from "../services/storage.service";
-import {Router} from "@angular/router";
+import {StorageService} from '../services/storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',

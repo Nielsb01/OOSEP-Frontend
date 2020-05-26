@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {PreferenceDTO} from '../dto/preference.dto';
-import {NetworkService} from "./network.service";
+import {NetworkService} from './network.service';
 
 @Injectable({
   providedIn: 'root'
