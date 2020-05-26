@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UsernamesDto} from "../dto/usernames.dto";
 import {JiraUsernamesService} from "../services/jira-usernames.service";
-import {StorageService} from "../services/storage.service";
 
 @Component({
   selector: 'app-jira-usernames',
@@ -15,16 +14,17 @@ export class JiraUsernamesComponent {
 
   constructor(
     private jiraUsernamesService: JiraUsernamesService,
-    private storageService: StorageService,
     private formBuilder: FormBuilder,
   ) {
     this.usernamesForm = this.formBuilder.group({
-      originEmailAddress: ['', [Validators.required, Validators.email]],
-      destinationEmailAddress: ['', [Validators.required, Validators.email]]
+      originUsername: ['', [Validators.required, Validators.email]],
+      destinationUsername: ['', [Validators.required, Validators.email]]
     });
   }
 
   public onSubmit(usernamesData: UsernamesDto): void {
-    this.jiraUsernamesService.getJiraUsernames(usernamesData);
+    this.jiraUsernamesService.getJiraUsernames(usernamesData).subscribe((data) => {
+
+    }, (error) => console.error(error));
   }
 }
