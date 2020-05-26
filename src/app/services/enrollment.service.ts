@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {LoginDTO} from '../dto/login.dto';
 import {Observable} from 'rxjs';
-import {NetworkService} from "./network.service";
+import {NetworkService} from './network.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,6 @@ export class EnrollmentService {
   ) {}
 
   public enroll(loginData: LoginDTO): Observable<any> {
-    return this.networkService.post(this.url, loginData);
+    return this.networkService.post(this.url, loginData, false);
   }
 }
