@@ -1,3 +1,3 @@
 export interface PreferenceDTO {
-  autoSynchronisation: boolean;
+  autoSynchronisation: number;
 }
