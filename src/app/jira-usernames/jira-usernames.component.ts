@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UsernamesDto} from "../dto/usernames.dto";
-import {JiraUsernamesService} from "../services/jira-usernames.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UsernamesDto} from '../dto/usernames.dto';
+import {JiraUsernamesService} from '../services/jira-usernames.service';
 
 @Component({
   selector: 'app-jira-usernames',

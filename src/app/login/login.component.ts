@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {EnrollmentService} from '../services/enrollment.service';
 import {LoginDTO} from '../dto/login.dto';
-import {StorageService} from "../services/storage.service";
-import {Router} from "@angular/router";
+import {StorageService} from '../services/storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',

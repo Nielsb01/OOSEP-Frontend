@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {SynchroniseDTO} from "../synchronise.dto";
-import {NetworkService} from "./network.service";
+import {SynchroniseDTO} from '../dto/synchronise.dto';
+import {NetworkService} from './network.service';
 
 @Injectable({
   providedIn: 'root'
