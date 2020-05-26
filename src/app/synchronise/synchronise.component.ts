@@ -25,7 +25,8 @@ export class SynchroniseComponent {
   }
 
   public onSubmit(synchronisationData: SynchroniseDTO): void {
-    this.synchronisationService.handleSynchronisation(synchronisationData);
-    console.warn('Synchronisation attempt made: ', synchronisationData);
+    this.synchronisationService.handleSynchronisation(synchronisationData).subscribe((data) => {
+      console.warn('Synchronisation attempt made: ', synchronisationData);
+    }, (error) => console.error(error));
   }
 }

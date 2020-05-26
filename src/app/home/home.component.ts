@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     let userId = this.storageService.getUserId();
-    console.log('hoi');
 
     if (userId <= 0) {
       this.router.navigateByUrl('/login');

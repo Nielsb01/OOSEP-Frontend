@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ConfigService} from './config.service';
-import {Observable} from 'rxjs';
+import {Observable, Subscriber} from 'rxjs';
 import {StorageService} from './storage.service';
 
 @Injectable({
@@ -34,10 +34,10 @@ export class NetworkService {
     });
   }
 
-  private sendToBackend(url: string, queryParams: string, appendUserId: boolean, callback: (completeUrl: string, observer) => any): Observable<any> {
+  private sendToBackend(url: string, queryParams: string, appendUserId: boolean, callback: (completeUrl: string, observer: Subscriber<any>) => any): Observable<any> {
     const userId = this.storageService.getUserId();
 
-    return new Observable<any>((observer) => {
+    return new Observable<any>((observer: Subscriber<any>) => {
       this.configService.getConfiguration().subscribe((config) => {
         let completeUrl = `${config.backendUrl}${url}`;
 
