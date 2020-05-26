@@ -25,9 +25,8 @@ export class AutoSyncOptionComponent implements OnInit {
     });
   }
 
-
-  onSubmit(synchOptionData: PreferenceDTO): void {
-    this.preferencesService.enroll(synchOptionData)
+  onSubmit(syncOptionData: PreferenceDTO): void {
+    this.preferencesService.enroll(syncOptionData)
       .subscribe(
         data => {
           this.ngOnInit();
