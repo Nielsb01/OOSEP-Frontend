@@ -14,6 +14,6 @@ export class PreferencesService {
   ) {}
 
   public enroll(preferenceDTO: PreferenceDTO): Observable<any> {
-    return this.networkService.post(this.url, preferenceDTO);
+    return this.networkService.post(`${this.url}`, {}, `?autoSync=${preferenceDTO.autoSynchronisation}`);
   }
 }
