@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import {SynchroniseDTO} from "../synchronise.dto";
-import {dateValidator} from "../validator/date.validator";
-import {SynchronisationService} from "../services/synchronisation.service";
+import {SynchroniseDTO} from '../dto/synchronise.dto';
+import {dateValidator} from '../validator/date.validator';
+import {SynchronisationService} from '../services/synchronisation.service';
 
 @Component({
   selector: 'app-synchronise',
