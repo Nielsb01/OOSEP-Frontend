@@ -14,6 +14,6 @@ export class EnrollmentService {
   ) {}
 
   public enroll(loginData: LoginDTO): Observable<any> {
-    return this.networkService.post(this.url, loginData, false);
+    return this.networkService.post(this.url, loginData, '', false);
   }
 }
