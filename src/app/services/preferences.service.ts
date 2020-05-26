@@ -13,7 +13,11 @@ export class PreferencesService {
     public networkService: NetworkService
   ) {}
 
+  public getPreferences(): Observable<any> {
+    return this.networkService.get(this.url);
+  }
+
   public enroll(preferenceDTO: PreferenceDTO): Observable<any> {
-    return this.networkService.post(`${this.url}`, {}, `?autoSync=${preferenceDTO.autoSynchronisation}`);
+    return this.networkService.post(this.url, {}, `?autoSync=${preferenceDTO.autoSynchronisation}`);
   }
 }
