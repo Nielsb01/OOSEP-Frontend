@@ -14,7 +14,7 @@ export function dateValidator(control: FormControl): ValidationErrors | null {
     givenDate = control.value.toString().trim();
   }
 
-  const dateFormat = 'DD-MM-YYYY HH:mm';
+  const dateFormat = 'DD-MM-YYYY';
   const date = moment(givenDate, dateFormat, true);
 
   if (!date.isValid()) {
