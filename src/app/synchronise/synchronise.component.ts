@@ -4,7 +4,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SynchroniseDTO} from '../dto/synchronise.dto';
 import {dateValidator} from '../validator/date.validator';
 import {SynchronisationService} from '../services/synchronisation.service';
-import {extractQueriesFromDecorator} from "@angular/compiler-cli/src/ngtsc/annotations/src/directive";
 
 @Component({
   selector: 'app-synchronise',

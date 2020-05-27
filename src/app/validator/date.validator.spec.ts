@@ -1,5 +1,5 @@
-import {dateValidator} from "./date.validator";
-import {FormControl} from "@angular/forms";
+import {dateValidator} from './date.validator';
+import {FormControl} from '@angular/forms';
 
 describe('DateValidator', () => {
   it('Should return null for a date in the correct format (DD-MM-YYYY)', () => {

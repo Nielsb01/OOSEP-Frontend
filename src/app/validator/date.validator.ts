@@ -1,4 +1,4 @@
-import {FormControl, ValidationErrors} from "@angular/forms";
+import {FormControl, ValidationErrors} from '@angular/forms';
 import * as moment from 'moment'
 
 /**
