@@ -24,9 +24,23 @@ export class SynchroniseComponent {
     });
   }
 
-  public onSubmit(synchronisationData: SynchroniseDTO): void {
+  public onSubmit(formData: {fromDate: string, untilDate: string}): void {
+    const synchronisationData: SynchroniseDTO = {
+      fromDate: this.convertDate(formData.fromDate),
+      untilDate: this.convertDate(formData.untilDate)
+    };
+
     this.synchronisationService.handleSynchronisation(synchronisationData).subscribe((data) => {
       console.warn('Synchronisation attempt made: ', synchronisationData);
     }, (error) => console.error(error));
+  }
+
+  private convertDate(date: string): string {
+    let dateParts = date.split('-');
+    const day = Number(dateParts[0]);
+    const month = Number(dateParts[1]);
+    const year = Number(dateParts[2]);
+
+    return `${year}-${month}-${day}`;
   }
 }

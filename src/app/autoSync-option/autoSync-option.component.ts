@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {PreferenceDTO} from '../dto/preference.dto';
 import {PreferencesService} from '../services/preferences.service';
-import {GetPreferenceDto} from "../dto/get-preference.dto";
+import {GetPreferenceDto} from '../dto/get-preference.dto';
 
 @Component({
   selector: 'app-auto-sync',
