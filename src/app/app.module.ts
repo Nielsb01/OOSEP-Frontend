@@ -11,6 +11,8 @@ import {LoginComponent} from './login/login.component';
 import {AutoSyncOptionComponent} from './autoSync-option/autoSync-option.component';
 import {JiraUsernamesComponent} from './jira-usernames/jira-usernames.component';
 import {HomeComponent} from './home/home.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import {HomeComponent} from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
