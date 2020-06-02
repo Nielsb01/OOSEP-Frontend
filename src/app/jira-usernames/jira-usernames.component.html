@@ -1,0 +1,27 @@
+<main>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h1 class="fadeIn second">Jira Synchroniseermachien</h1>
+      <!-- Synchronisation Form -->
+      <form [formGroup]="usernamesForm" (ngSubmit)="onSubmit(usernamesForm.value)">
+
+        <div class="container">
+          <!-- 'Sync origin' input fields -->
+          <div>
+            <h2 class="fadeIn second">Van</h2>
+            <input type="text" class="fadeIn second" placeholder="E-mailadres" formControlName="originUsername">
+          </div>
+
+          <!-- 'Sync destination' input fields -->
+          <div>
+            <h2 class="fadeIn second">Naar</h2>
+            <input type="text" class="fadeIn second" placeholder="E-mailadres" formControlName="destinationUsername">
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="usernamesForm.invalid" class="fadeIn fourth">Opslaan</button>
+
+      </form>
+    </div>
+  </div>
+</main>

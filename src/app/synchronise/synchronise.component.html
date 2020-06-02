@@ -5,19 +5,26 @@
       <!-- Synchronisation Form -->
       <form [formGroup]="synchronisationForm" (ngSubmit)="onSubmit(synchronisationForm.value)">
 
+        <p>
+          U kunt nu handmatig synchroniseren voer de datums in van waartussen uw worklogs gesynchroniseerd moeten worden
+        </p>
+
         <div class="container">
-          <!-- 'Sync origin' input fields -->
+
+          <!-- Sync date from -->
           <div>
-            <h2 class="fadeIn second">Van</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncOriginEmailAddress">
+            <h2 class="fadeIn second">Begindatum</h2>
+            <input type="text" class="input" placeholder="dd-mm-jjjj" formControlName="fromDate">
           </div>
 
-          <!-- 'Sync destination' input fields -->
+          <!-- Sync date until -->
           <div>
-            <h2 class="fadeIn second">Naar</h2>
-            <input type="text" class="fadeIn second" name="login" placeholder="E-mailadres" formControlName="syncDestinationEmailAddress">
+            <h2 class="fadeIn second">Einddatum</h2>
+            <input type="text" class="input" placeholder="dd-mm-jjjj" formControlName="untilDate">
           </div>
         </div>
+
+        <ngx-spinner></ngx-spinner>
 
         <button type="submit" [disabled]="synchronisationForm.invalid" class="fadeIn fourth">Synchroniseer nu</button>
 

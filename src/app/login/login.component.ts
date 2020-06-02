@@ -1,22 +1,24 @@
-
-
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { EnrollmentService } from '../enrollment.service';
-import { LoginDTO } from '../login.dto';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {EnrollmentService} from '../services/enrollment.service';
+import {LoginDTO} from '../dto/login.dto';
+import {StorageService} from '../services/storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    public enrollmentService: EnrollmentService,
+    private enrollmentService: EnrollmentService,
+    private storageService: StorageService,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       username: '',
@@ -29,12 +31,22 @@ export class LoginComponent {
    * @param loginData is a {@link LoginDTO} consisting of a username and password.
    */
   onSubmit(loginData: LoginDTO) {
-    console.log('login attempt made: ', loginData);
     this.enrollmentService.enroll(loginData)
       .subscribe(
-        data => console.log('Response', data),
+        data => {
+          this.storageService.setUserId(data);
+          this.ngOnInit();
+        },
         error => console.error('Error!', error)
       );
+  }
+
+  ngOnInit(): void {
+    let userId = this.storageService.getUserId();
+
+    if (userId > 0) {
+      this.router.navigateByUrl('/home');
+    }
   }
 }
 

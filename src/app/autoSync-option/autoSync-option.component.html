@@ -1,0 +1,29 @@
+<main>
+  <div class="wrapper fadeIn">
+    <div class="smallContainer">
+    <div id="formContent">
+      <!-- AutoSynchronisationOption Form -->
+      <form [formGroup]="synchronisationOptionForm" (ngSubmit)="onSubmit(synchronisationOptionForm.value)">
+          <div class="fadeIn second">
+            <h2 class="fadeIn second">Automatish Synchroniseren</h2>
+
+            <p *ngIf="preferences.autoSyncOn">
+              U heeft ervoor gekozen het automatisch synchroniseren aan te zetten
+            </p>
+
+            <div>
+              <input type="radio" id="autoSynchronisationOptionYes" name="autoSynchronisation" value="true" formControlName="autoSynchronisation">
+              <label for="autoSynchronisationOptionYes">Aan!</label><br>
+
+              <input type="radio" id="autoSynchronisationOptionNo" name="autoSynchronisation" value="false" formControlName="autoSynchronisation">
+              <label for="autoSynchronisationOptionNo">Uit!</label><br>
+            </div>
+            <div class="loginButtonContainer">
+              <button type="submit" class="fadeIn second">Update keuze</button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</main>
