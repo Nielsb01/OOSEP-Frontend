@@ -13,7 +13,7 @@ import {JiraUsernamesComponent} from './jira-usernames/jira-usernames.component'
 import {HomeComponent} from './home/home.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
+import {MatCardModule} from '@angular/material/card';
 import { MessageComponent } from './message/message.component';
 
 

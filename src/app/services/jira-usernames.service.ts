@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {UsernamesDto} from '../dto/usernames.dto';
-import {Observable} from 'rxjs';
 import {NetworkService} from './network.service';
-import {MessageService} from "./message.service";
+import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
