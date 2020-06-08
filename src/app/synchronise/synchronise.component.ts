@@ -5,7 +5,6 @@ import {SynchroniseDTO} from '../dto/synchronise.dto';
 import {dateValidator} from '../validator/date.validator';
 import {SynchronisationService} from '../services/synchronisation.service';
 import {NgxSpinnerService} from 'ngx-spinner';
-import {SynchronisationResultsComponent} from "./synchronisation-results/synchronisation-results.component";
 
 @Component({
   selector: 'app-synchronise',
