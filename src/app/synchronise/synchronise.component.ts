@@ -26,7 +26,7 @@ export class SynchroniseComponent {
   constructor(
     private synchronisationService: SynchronisationService,
     private formBuilder: FormBuilder,
-    private spinner: NgxSpinnerService,
+    private spinner: NgxSpinnerService
   ) {
     this.synchronisationForm = this.formBuilder.group({
       fromDate: ['', [Validators.required, dateValidator]],
