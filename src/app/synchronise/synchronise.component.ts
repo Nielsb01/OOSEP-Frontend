@@ -34,11 +34,8 @@ export class SynchroniseComponent {
       untilDate: this.convertDate(formData.untilDate)
     };
 
-    this.synchronisationService.handleSynchronisation(synchronisationData).subscribe((data) => {
+    this.synchronisationService.handleSynchronisation(synchronisationData, (data) => {
       this.spinner.hide();
-    }, (error) => {
-      this.spinner.hide();
-      console.error(error);
     });
   }
 

@@ -31,14 +31,10 @@ export class LoginComponent implements OnInit {
    * @param loginData is a {@link LoginDTO} consisting of a username and password.
    */
   onSubmit(loginData: LoginDTO) {
-    this.enrollmentService.enroll(loginData)
-      .subscribe(
-        data => {
+    this.enrollmentService.enroll(loginData, (data) => {
           this.storageService.setUserId(data);
           this.ngOnInit();
-        },
-        error => console.error('Error!', error)
-      );
+        });
   }
 
   ngOnInit(): void {
