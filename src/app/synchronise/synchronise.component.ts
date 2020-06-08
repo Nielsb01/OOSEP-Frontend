@@ -16,11 +16,18 @@ export class SynchroniseComponent {
 
   public synchronisationForm: FormGroup;
 
+  synchronised: boolean;
+  worklogsFailed: boolean;
+
+  synchronisedWorklogs: number;
+  synchronisedHours: number;
+  failedWorklogs : number;
+  failedHours: number;
+
   constructor(
     private synchronisationService: SynchronisationService,
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
-    private synchronisationResultsComponent: SynchronisationResultsComponent
   ) {
     this.synchronisationForm = this.formBuilder.group({
       fromDate: ['', [Validators.required, dateValidator]],
@@ -46,13 +53,17 @@ export class SynchroniseComponent {
   }
 
   private showSynchronisationResults(synchronisationData) {
-    let synchronisedWorklogs = synchronisationData.totalSynchronisedWorklogs;
-    let synchronisedHours = this.secondsToHours(synchronisationData.totalSynchronisedSeconds);
+    this.synchronisedWorklogs = synchronisationData.totalSynchronisedWorklogs;
+    this.synchronisedHours = this.secondsToHours(synchronisationData.totalSynchronisedSeconds);
 
-    let failedWorklogs = synchronisationData.totalFailedSynchronisedWorklogs;
-    let failedHours = this.secondsToHours(synchronisationData.totalFailedSynchronisedSeconds);
+    this.failedWorklogs = synchronisationData.totalFailedSynchronisedWorklogs;
+    this.failedHours = this.secondsToHours(synchronisationData.totalFailedSynchronisedSeconds);
 
-    this.synchronisationResultsComponent.show(synchronisedWorklogs, synchronisedHours, failedWorklogs, failedHours);
+    this.synchronised = true;
+
+    if (this.failedWorklogs > 0)  {
+      this.worklogsFailed = true;
+    }
   }
 
   private secondsToHours(seconds: number): number {
