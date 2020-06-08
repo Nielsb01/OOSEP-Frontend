@@ -38,7 +38,7 @@ export class NetworkService {
     const userId = this.storageService.getUserId();
 
     return new Observable<any>((observer: Subscriber<any>) => {
-      this.configService.getConfiguration().subscribe((config) => {
+      this.configService.getConfiguration((config) => {
         let completeUrl = `${config.backendUrl}${url}`;
 
         if (appendUserId) {
