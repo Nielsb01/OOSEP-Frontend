@@ -13,6 +13,7 @@ import {JiraUsernamesComponent} from './jira-usernames/jira-usernames.component'
 import {HomeComponent} from './home/home.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SynchronisationResultsComponent } from './synchronise/synchronisation-results/synchronisation-results.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LoginComponent,
     AutoSyncOptionComponent,
     JiraUsernamesComponent,
-    HomeComponent
+    HomeComponent,
+    SynchronisationResultsComponent
   ],
   imports: [
     BrowserModule,
