@@ -33,6 +33,9 @@ export class SynchroniseComponent {
       fromDate: ['', [Validators.required, dateValidator]],
       untilDate: ['', [Validators.required, dateValidator]]
     });
+
+    this.synchronised = false;
+    this.worklogsFailed = false;
   }
 
   public onSubmit(formData: {fromDate: string, untilDate: string}): void {
