@@ -23,8 +23,8 @@ export class JiraUsernamesComponent {
   }
 
   public onSubmit(usernamesData: UsernamesDto): void {
-    this.jiraUsernamesService.getJiraUsernames(usernamesData).subscribe((data) => {
+    this.jiraUsernamesService.getJiraUsernames(usernamesData, (data) => {
 
-    }, (error) => console.error(error));
+    });
   }
 }
