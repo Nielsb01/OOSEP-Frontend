@@ -15,6 +15,14 @@ export class SynchroniseComponent {
 
   public synchronisationForm: FormGroup;
 
+  public synchronised: boolean;
+  public worklogsFailed: boolean;
+
+  public synchronisedWorklogs: number;
+  public synchronisedHours: number;
+  public failedWorklogs : number;
+  public failedHours: number;
+
   constructor(
     private synchronisationService: SynchronisationService,
     private formBuilder: FormBuilder,
@@ -24,6 +32,9 @@ export class SynchroniseComponent {
       fromDate: ['', [Validators.required, dateValidator]],
       untilDate: ['', [Validators.required, dateValidator]]
     });
+
+    this.synchronised = false;
+    this.worklogsFailed = false;
   }
 
   public onSubmit(formData: {fromDate: string, untilDate: string}): void {
@@ -34,9 +45,28 @@ export class SynchroniseComponent {
       untilDate: this.convertDate(formData.untilDate)
     };
 
-    this.synchronisationService.handleSynchronisation(synchronisationData, (data) => {
+    this.synchronisationService.handleSynchronisation(synchronisationData, (synchronisationData) => {
       this.spinner.hide();
+      this.showSynchronisationResults(synchronisationData)
     });
+  }
+
+  private showSynchronisationResults(synchronisationData) {
+    this.synchronisedWorklogs = synchronisationData.totalSynchronisedWorklogs;
+    this.synchronisedHours = this.secondsToHours(synchronisationData.totalSynchronisedSeconds);
+
+    this.failedWorklogs = synchronisationData.totalFailedSynchronisedWorklogs;
+    this.failedHours = this.secondsToHours(synchronisationData.totalFailedSynchronisedSeconds);
+
+    this.synchronised = true;
+
+    if (this.failedWorklogs > 0)  {
+      this.worklogsFailed = true;
+    }
+  }
+
+  private secondsToHours(seconds: number): number {
+    return seconds / 60 / 60;
   }
 
   private convertDate(date: string): string {
