@@ -15,13 +15,13 @@ export class SynchroniseComponent {
 
   public synchronisationForm: FormGroup;
 
-  synchronised: boolean;
-  worklogsFailed: boolean;
+  public synchronised: boolean;
+  public worklogsFailed: boolean;
 
-  synchronisedWorklogs: number;
-  synchronisedHours: number;
-  failedWorklogs : number;
-  failedHours: number;
+  public synchronisedWorklogs: number;
+  public synchronisedHours: number;
+  public failedWorklogs : number;
+  public failedHours: number;
 
   constructor(
     private synchronisationService: SynchronisationService,
