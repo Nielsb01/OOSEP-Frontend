@@ -10,6 +10,6 @@ export class MessageService {
   constructor() { }
 
   public add(message: HttpErrorResponse): void {
-    this.messages.push(message.statusText);
+    this.messages.push(message.error);
   }
 }

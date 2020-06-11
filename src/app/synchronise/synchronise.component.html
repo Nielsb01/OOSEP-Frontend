@@ -26,7 +26,8 @@
 
         <ngx-spinner></ngx-spinner>
 
-        <button type="submit" [disabled]="synchronisationForm.invalid" class="fadeIn fourth">Synchroniseer nu</button>
+        <p *ngIf="!userKeys.hasJiraUserKeys"> U moet nog Jira-userkeys zetten voordat u gebruik kan maken van synchronisatie</p>
+        <button type="submit" [disabled]="synchronisationForm.invalid || !userKeys.hasJiraUserKeys" class="fadeIn fourth">Synchroniseer nu</button>
 
         <p *ngIf="synchronised">Er zijn {{synchronisedWorklogs}} uren registraties gesynchroniseerd met een totaal van {{synchronisedHours}} uur!</p>
         <p *ngIf="worklogsFailed"> {{failedWorklogs}} uren registraties met een totaal van {{failedHours}} uur konden niet gesynchroniseerd worden. Deze worden met de volgende automatische synchronisatie meegenomen.</p>
