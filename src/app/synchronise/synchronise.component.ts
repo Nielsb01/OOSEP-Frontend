@@ -1,19 +1,24 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {SynchroniseDTO} from '../dto/synchronise.dto';
 import {dateValidator} from '../validator/date.validator';
 import {SynchronisationService} from '../services/synchronisation.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {JiraUserkeyService} from '../services/jira-userkey.service';
+import {GetUserkeysDto} from '../dto/get-userkeys.dto';
 
 @Component({
   selector: 'app-synchronise',
   templateUrl: './synchronise.component.html',
   styleUrls: ['./synchronise.component.css']
 })
-export class SynchroniseComponent {
+export class SynchroniseComponent implements OnInit{
 
   public synchronisationForm: FormGroup;
+  userKeys: GetUserkeysDto = {
+    hasJiraUserKeys: false
+  };
 
   public synchronised: boolean;
   public worklogsFailed: boolean;
@@ -26,7 +31,8 @@ export class SynchroniseComponent {
   constructor(
     private synchronisationService: SynchronisationService,
     private formBuilder: FormBuilder,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private userkeyService: JiraUserkeyService
   ) {
     this.synchronisationForm = this.formBuilder.group({
       fromDate: ['', [Validators.required, dateValidator]],
@@ -47,7 +53,7 @@ export class SynchroniseComponent {
 
     this.synchronisationService.handleSynchronisation(synchronisationData, (synchronisationData) => {
       this.spinner.hide();
-      this.showSynchronisationResults(synchronisationData)
+      this.showSynchronisationResults(synchronisationData);
     });
   }
 
@@ -76,5 +82,11 @@ export class SynchroniseComponent {
     const year = Number(dateParts[2]);
 
     return `${year}-${month}-${day}`;
+  }
+
+  ngOnInit(): void {
+    this.userkeyService.getAvalableJiraKeys((availableUserKeys: GetUserkeysDto) => {
+      this.userKeys = availableUserKeys;
+    });
   }
 }
