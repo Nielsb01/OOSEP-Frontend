@@ -1,21 +1,20 @@
-import {Injectable} from '@angular/core';
-import {LoginDTO} from '../dto/login.dto';
+import { Injectable } from '@angular/core';
 import {NetworkService} from './network.service';
 import {MessageService} from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EnrollmentService {
-  private readonly url = '/login';
+export class JiraUserkeyService {
+  private readonly url = '/user/hasUserKeys';
 
   constructor(
     private networkService: NetworkService,
     private messageService: MessageService
   ) {}
 
-  public enroll(loginData: LoginDTO, observer: (any) => void): void {
-    this.networkService.post(this.url, loginData, '', false)
+  public getAvalableJiraKeys(observer: (any) => void): void {
+    this.networkService.get(this.url)
       .subscribe(observer, (error) => {
         this.messageService.add(error);
       });

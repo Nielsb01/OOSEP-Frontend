@@ -4,6 +4,7 @@ import {EnrollmentService} from '../services/enrollment.service';
 import {LoginDTO} from '../dto/login.dto';
 import {StorageService} from '../services/storage.service';
 import {Router} from '@angular/router';
+import {MessageService} from '../services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private enrollmentService: EnrollmentService,
     private storageService: StorageService,
-    private router: Router
+    private router: Router,
+    private messService: MessageService
   ) {
     this.loginForm = this.formBuilder.group({
       username: '',
@@ -31,20 +33,17 @@ export class LoginComponent implements OnInit {
    * @param loginData is a {@link LoginDTO} consisting of a username and password.
    */
   onSubmit(loginData: LoginDTO) {
-    this.enrollmentService.enroll(loginData)
-      .subscribe(
-        data => {
+    this.enrollmentService.enroll(loginData, (data) => {
           this.storageService.setUserId(data);
           this.ngOnInit();
-        },
-        error => console.error('Error!', error)
-      );
+        });
   }
 
   ngOnInit(): void {
     let userId = this.storageService.getUserId();
 
     if (userId > 0) {
+      this.messService.messages = [];
       this.router.navigateByUrl('/home');
     }
   }

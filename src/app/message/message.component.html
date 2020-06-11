@@ -1,0 +1,15 @@
+<main *ngIf="messageService.messages.length > 0">
+  <div class="wrapper fadeIn">
+    <div class="smallContainer">
+      <div id="formContent">
+
+        <h2>Foutmeldingen</h2>
+
+        <mat-card *ngFor="let message of messageService.messages">
+          <mat-card-content>{{ message }}</mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</main>
